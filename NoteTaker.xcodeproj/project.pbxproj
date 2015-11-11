@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		891665B91BF1C75100C8F939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665B81BF1C75100C8F939 /* AppDelegate.swift */; };
+		891665BB1BF1C75100C8F939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665BA1BF1C75100C8F939 /* ViewController.swift */; };
+		891665BE1BF1C75100C8F939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891665BC1BF1C75100C8F939 /* Main.storyboard */; };
+		891665C11BF1C75100C8F939 /* NoteTaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 891665BF1BF1C75100C8F939 /* NoteTaker.xcdatamodeld */; };
+		891665C31BF1C75100C8F939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891665C21BF1C75100C8F939 /* Assets.xcassets */; };
+		891665C61BF1C75100C8F939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891665C41BF1C75100C8F939 /* LaunchScreen.storyboard */; };
+		891665D11BF1C75100C8F939 /* NoteTakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665D01BF1C75100C8F939 /* NoteTakerTests.swift */; };
+		891665DC1BF1C75100C8F939 /* NoteTakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665DB1BF1C75100C8F939 /* NoteTakerUITests.swift */; };
+		891665EA1BF1CA2300C8F939 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665E91BF1CA2300C8F939 /* Note.swift */; };
+		891665EC1BF1CD5500C8F939 /* NoteEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665EB1BF1CD5500C8F939 /* NoteEditorController.swift */; };
+		891665EF1BF32B4B00C8F939 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665EE1BF32B4B00C8F939 /* CoreDataStackManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		891665CD1BF1C75100C8F939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 891665AD1BF1C75100C8F939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 891665B41BF1C75100C8F939;
+			remoteInfo = NoteTaker;
+		};
+		891665D81BF1C75100C8F939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 891665AD1BF1C75100C8F939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 891665B41BF1C75100C8F939;
+			remoteInfo = NoteTaker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		891665B51BF1C75100C8F939 /* NoteTaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		891665B81BF1C75100C8F939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		891665BA1BF1C75100C8F939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		891665BD1BF1C75100C8F939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		891665C01BF1C75100C8F939 /* NoteTaker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteTaker.xcdatamodel; sourceTree = "<group>"; };
+		891665C21BF1C75100C8F939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		891665C51BF1C75100C8F939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		891665C71BF1C75100C8F939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		891665CC1BF1C75100C8F939 /* NoteTakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteTakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		891665D01BF1C75100C8F939 /* NoteTakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTakerTests.swift; sourceTree = "<group>"; };
+		891665D21BF1C75100C8F939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		891665D71BF1C75100C8F939 /* NoteTakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteTakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		891665DB1BF1C75100C8F939 /* NoteTakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTakerUITests.swift; sourceTree = "<group>"; };
+		891665DD1BF1C75100C8F939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		891665E91BF1CA2300C8F939 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		891665EB1BF1CD5500C8F939 /* NoteEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditorController.swift; sourceTree = "<group>"; };
+		891665EE1BF32B4B00C8F939 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		891665B21BF1C75100C8F939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891665C91BF1C75100C8F939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891665D41BF1C75100C8F939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		891665AC1BF1C75100C8F939 = {
+			isa = PBXGroup;
+			children = (
+				891665B71BF1C75100C8F939 /* NoteTaker */,
+				891665CF1BF1C75100C8F939 /* NoteTakerTests */,
+				891665DA1BF1C75100C8F939 /* NoteTakerUITests */,
+				891665B61BF1C75100C8F939 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		891665B61BF1C75100C8F939 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				891665B51BF1C75100C8F939 /* NoteTaker.app */,
+				891665CC1BF1C75100C8F939 /* NoteTakerTests.xctest */,
+				891665D71BF1C75100C8F939 /* NoteTakerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		891665B71BF1C75100C8F939 /* NoteTaker */ = {
+			isa = PBXGroup;
+			children = (
+				891665C21BF1C75100C8F939 /* Assets.xcassets */,
+				891665ED1BF3233400C8F939 /* ViewControllers */,
+				891665B81BF1C75100C8F939 /* AppDelegate.swift */,
+				891665BC1BF1C75100C8F939 /* Main.storyboard */,
+				891665C41BF1C75100C8F939 /* LaunchScreen.storyboard */,
+				891665C71BF1C75100C8F939 /* Info.plist */,
+				891665BF1BF1C75100C8F939 /* NoteTaker.xcdatamodeld */,
+				891665E91BF1CA2300C8F939 /* Note.swift */,
+				891665EE1BF32B4B00C8F939 /* CoreDataStackManager.swift */,
+			);
+			path = NoteTaker;
+			sourceTree = "<group>";
+		};
+		891665CF1BF1C75100C8F939 /* NoteTakerTests */ = {
+			isa = PBXGroup;
+			children = (
+				891665D01BF1C75100C8F939 /* NoteTakerTests.swift */,
+				891665D21BF1C75100C8F939 /* Info.plist */,
+			);
+			path = NoteTakerTests;
+			sourceTree = "<group>";
+		};
+		891665DA1BF1C75100C8F939 /* NoteTakerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				891665DB1BF1C75100C8F939 /* NoteTakerUITests.swift */,
+				891665DD1BF1C75100C8F939 /* Info.plist */,
+			);
+			path = NoteTakerUITests;
+			sourceTree = "<group>";
+		};
+		891665ED1BF3233400C8F939 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				891665EB1BF1CD5500C8F939 /* NoteEditorController.swift */,
+				891665BA1BF1C75100C8F939 /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		891665B41BF1C75100C8F939 /* NoteTaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 891665E01BF1C75200C8F939 /* Build configuration list for PBXNativeTarget "NoteTaker" */;
+			buildPhases = (
+				891665B11BF1C75100C8F939 /* Sources */,
+				891665B21BF1C75100C8F939 /* Frameworks */,
+				891665B31BF1C75100C8F939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoteTaker;
+			productName = NoteTaker;
+			productReference = 891665B51BF1C75100C8F939 /* NoteTaker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		891665CB1BF1C75100C8F939 /* NoteTakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 891665E31BF1C75200C8F939 /* Build configuration list for PBXNativeTarget "NoteTakerTests" */;
+			buildPhases = (
+				891665C81BF1C75100C8F939 /* Sources */,
+				891665C91BF1C75100C8F939 /* Frameworks */,
+				891665CA1BF1C75100C8F939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				891665CE1BF1C75100C8F939 /* PBXTargetDependency */,
+			);
+			name = NoteTakerTests;
+			productName = NoteTakerTests;
+			productReference = 891665CC1BF1C75100C8F939 /* NoteTakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		891665D61BF1C75100C8F939 /* NoteTakerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 891665E61BF1C75200C8F939 /* Build configuration list for PBXNativeTarget "NoteTakerUITests" */;
+			buildPhases = (
+				891665D31BF1C75100C8F939 /* Sources */,
+				891665D41BF1C75100C8F939 /* Frameworks */,
+				891665D51BF1C75100C8F939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				891665D91BF1C75100C8F939 /* PBXTargetDependency */,
+			);
+			name = NoteTakerUITests;
+			productName = NoteTakerUITests;
+			productReference = 891665D71BF1C75100C8F939 /* NoteTakerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		891665AD1BF1C75100C8F939 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = howard.lee;
+				TargetAttributes = {
+					891665B41BF1C75100C8F939 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					891665CB1BF1C75100C8F939 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 891665B41BF1C75100C8F939;
+					};
+					891665D61BF1C75100C8F939 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 891665B41BF1C75100C8F939;
+					};
+				};
+			};
+			buildConfigurationList = 891665B01BF1C75100C8F939 /* Build configuration list for PBXProject "NoteTaker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 891665AC1BF1C75100C8F939;
+			productRefGroup = 891665B61BF1C75100C8F939 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				891665B41BF1C75100C8F939 /* NoteTaker */,
+				891665CB1BF1C75100C8F939 /* NoteTakerTests */,
+				891665D61BF1C75100C8F939 /* NoteTakerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		891665B31BF1C75100C8F939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891665C61BF1C75100C8F939 /* LaunchScreen.storyboard in Resources */,
+				891665C31BF1C75100C8F939 /* Assets.xcassets in Resources */,
+				891665BE1BF1C75100C8F939 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891665CA1BF1C75100C8F939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891665D51BF1C75100C8F939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		891665B11BF1C75100C8F939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891665EC1BF1CD5500C8F939 /* NoteEditorController.swift in Sources */,
+				891665C11BF1C75100C8F939 /* NoteTaker.xcdatamodeld in Sources */,
+				891665BB1BF1C75100C8F939 /* ViewController.swift in Sources */,
+				891665B91BF1C75100C8F939 /* AppDelegate.swift in Sources */,
+				891665EA1BF1CA2300C8F939 /* Note.swift in Sources */,
+				891665EF1BF32B4B00C8F939 /* CoreDataStackManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891665C81BF1C75100C8F939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891665D11BF1C75100C8F939 /* NoteTakerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891665D31BF1C75100C8F939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891665DC1BF1C75100C8F939 /* NoteTakerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		891665CE1BF1C75100C8F939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 891665B41BF1C75100C8F939 /* NoteTaker */;
+			targetProxy = 891665CD1BF1C75100C8F939 /* PBXContainerItemProxy */;
+		};
+		891665D91BF1C75100C8F939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 891665B41BF1C75100C8F939 /* NoteTaker */;
+			targetProxy = 891665D81BF1C75100C8F939 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		891665BC1BF1C75100C8F939 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				891665BD1BF1C75100C8F939 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		891665C41BF1C75100C8F939 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				891665C51BF1C75100C8F939 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		891665DE1BF1C75100C8F939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		891665DF1BF1C75100C8F939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		891665E11BF1C75200C8F939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NoteTaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lee.howard.NoteTaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		891665E21BF1C75200C8F939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NoteTaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lee.howard.NoteTaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		891665E41BF1C75200C8F939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NoteTakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lee.howard.NoteTakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteTaker.app/NoteTaker";
+			};
+			name = Debug;
+		};
+		891665E51BF1C75200C8F939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NoteTakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lee.howard.NoteTakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteTaker.app/NoteTaker";
+			};
+			name = Release;
+		};
+		891665E71BF1C75200C8F939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NoteTakerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lee.howard.NoteTakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NoteTaker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		891665E81BF1C75200C8F939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NoteTakerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lee.howard.NoteTakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NoteTaker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		891665B01BF1C75100C8F939 /* Build configuration list for PBXProject "NoteTaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				891665DE1BF1C75100C8F939 /* Debug */,
+				891665DF1BF1C75100C8F939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		891665E01BF1C75200C8F939 /* Build configuration list for PBXNativeTarget "NoteTaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				891665E11BF1C75200C8F939 /* Debug */,
+				891665E21BF1C75200C8F939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		891665E31BF1C75200C8F939 /* Build configuration list for PBXNativeTarget "NoteTakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				891665E41BF1C75200C8F939 /* Debug */,
+				891665E51BF1C75200C8F939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		891665E61BF1C75200C8F939 /* Build configuration list for PBXNativeTarget "NoteTakerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				891665E71BF1C75200C8F939 /* Debug */,
+				891665E81BF1C75200C8F939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		891665BF1BF1C75100C8F939 /* NoteTaker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				891665C01BF1C75100C8F939 /* NoteTaker.xcdatamodel */,
+			);
+			currentVersion = 891665C01BF1C75100C8F939 /* NoteTaker.xcdatamodel */;
+			path = NoteTaker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 891665AD1BF1C75100C8F939 /* Project object */;
+}

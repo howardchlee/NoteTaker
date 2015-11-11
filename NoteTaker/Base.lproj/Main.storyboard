@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PNl-7K-vUx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ZkJ-E7-GcD">
+            <objects>
+                <navigationController id="PNl-7K-vUx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GOs-ZD-lw5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iAz-dh-D9U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pcr-qg-YuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-881" y="87"/>
+        </scene>
+        <!--Choose A Note-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Choose A Note" id="BYZ-38-t0r" customClass="ViewController" customModule="NoteTaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PhL-OO-5D1">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Vaa-v4-VBH"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZLh-n0-Qp4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PhL-OO-5D1" secondAttribute="bottom" id="7Z4-hs-Mwa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PhL-OO-5D1" secondAttribute="trailing" id="PIk-gb-YGT"/>
+                            <constraint firstItem="PhL-OO-5D1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Qa4-6J-CCn"/>
+                            <constraint firstItem="PhL-OO-5D1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jW3-5e-Djh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose A Note" id="SNQ-jL-HUi"/>
+                    <connections>
+                        <outlet property="tableView" destination="PhL-OO-5D1" id="0gA-yF-0bx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="177"/>
+        </scene>
+        <!--Note Editor-->
+        <scene sceneID="p69-Wc-DO4">
+            <objects>
+                <viewController storyboardIdentifier="editor" id="jpz-wl-ofL" userLabel="Note Editor" customClass="NoteEditorController" customModule="NoteTaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a2Z-Lz-Ltt"/>
+                        <viewControllerLayoutGuide type="bottom" id="uwD-8q-gsn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kxo-Xm-5wn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Cx-Rf-RDC" userLabel="titleTextField">
+                                <rect key="frame" x="40" y="40" width="520" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.97353000869999995" blue="0.90756139059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jpz-wl-ofL" id="HfO-OA-MnU"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sMe-aU-TVn" userLabel="bodyTextView">
+                                <rect key="frame" x="40" y="90" width="520" height="490"/>
+                                <color key="backgroundColor" red="1" green="0.97353000871614026" blue="0.90756139056578278" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jpz-wl-ofL" id="prm-S4-vhP"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sMe-aU-TVn" firstAttribute="top" secondItem="6Cx-Rf-RDC" secondAttribute="bottom" constant="20" id="1oN-yd-Pgy"/>
+                            <constraint firstItem="sMe-aU-TVn" firstAttribute="leading" secondItem="6Cx-Rf-RDC" secondAttribute="leading" id="4CJ-0e-c81"/>
+                            <constraint firstItem="6Cx-Rf-RDC" firstAttribute="top" secondItem="a2Z-Lz-Ltt" secondAttribute="bottom" constant="20" id="DDj-FX-iCh"/>
+                            <constraint firstItem="uwD-8q-gsn" firstAttribute="top" secondItem="sMe-aU-TVn" secondAttribute="bottom" constant="20" id="V0w-So-TJD"/>
+                            <constraint firstItem="sMe-aU-TVn" firstAttribute="trailing" secondItem="6Cx-Rf-RDC" secondAttribute="trailing" id="ZMw-nM-O7M"/>
+                            <constraint firstItem="6Cx-Rf-RDC" firstAttribute="leading" secondItem="kxo-Xm-5wn" secondAttribute="leadingMargin" constant="20" id="q4m-aO-YIQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Cx-Rf-RDC" secondAttribute="trailing" constant="20" id="yYw-Cg-Ing"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bodyTextView" destination="sMe-aU-TVn" id="KCw-99-U94"/>
+                        <outlet property="titleTextField" destination="6Cx-Rf-RDC" id="o1d-51-XRw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rav-5h-v6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="168"/>
+        </scene>
+    </scenes>
+</document>
