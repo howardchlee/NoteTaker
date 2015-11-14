@@ -62,5 +62,21 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let noteId = indexPath.row
         openNoteEditor(noteId)
     }
+
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let noteId = indexPath.row
+            let note = allNotes[noteId]
+            allNotes.removeAtIndex(noteId)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+
+            CoreDataStackManager.sharedInstance().managedObjectContext.deleteObject(note)
+            CoreDataStackManager.sharedInstance().saveContext()
+        }
+    }
 }
 
