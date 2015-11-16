@@ -69,7 +69,22 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
     }
 
     @IBAction func cancelTapped(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        if saveBarButtonItem.enabled {
+            // there is save to be commited
+            let alert = UIAlertController(title: "Exiting Editor", message: "You have unsaved changes to this note.  Are you sure you want to discard the unsaved changes and exit?", preferredStyle: .Alert)
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            let discardAction = UIAlertAction(title: "Discard Changes", style: .Destructive, handler: {[unowned self] (_) in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+
+            alert.addAction(cancelAction)
+            alert.addAction(discardAction)
+
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     // MARK: UITextFieldDelegate

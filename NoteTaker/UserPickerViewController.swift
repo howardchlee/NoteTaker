@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class UserPickerViewController: UIViewController {
+
+    let maximumUserNameLength = 16
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,6 +22,36 @@ class UserPickerViewController: UIViewController {
         set {
             appDelegate.allUsers = newValue
         }
+    }
+
+    func showNameAlertWithTitle(title: String, message: String, handler: (String -> Void)) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let okAction = UIAlertAction(title: "Confirm", style: .Default, handler: { (_) -> Void in
+            let newName = alert.textFields![0].text!
+            handler(newName)
+        })
+        
+        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.placeholder = "Enter name here"
+            NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue(), usingBlock: { (notification) -> Void in
+                
+                // Restrict the name of the strength
+                let text = textField.text!
+                if text.characters.count > self.maximumUserNameLength {
+                    textField.text = text.substringToIndex(text.startIndex.advancedBy(self.maximumUserNameLength))
+                }
+
+                // Set done button to enabled if text has been entered
+                okAction.enabled = textField.text != ""
+            })
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
     func createUserWithName(name: String) {
@@ -59,26 +91,39 @@ extension UserPickerViewController: UITableViewDelegate, UITableViewDataSource {
             dismissViewControllerAnimated(true, completion: nil)
         } else {
             // this is the add user cell
-            let alert = UIAlertController(title: "New User", message: "Name the user", preferredStyle: .Alert)
-
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-            let okAction = UIAlertAction(title: "Done", style: .Default, handler: { (_) -> Void in
-                let nameField = alert.textFields![0] as UITextField
-                self.createUserWithName(nameField.text!)
+            showNameAlertWithTitle("New User", message: "Enter the name of the user below", handler: { [unowned self] (name) -> Void in
+                self.createUserWithName(name)
             })
-            
-            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-                textField.placeholder = "Enter name here"
-                NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue(), usingBlock: { (_) -> Void in
-                    okAction.enabled = textField.text != ""
-                })
-            })
-
-            alert.addAction(cancelAction)
-            alert.addAction(okAction)
-
-            self.presentViewController(alert, animated: true, completion: nil)
         }
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // all rows except the edit cell are editable
+        return indexPath.row < allUsers.count
+    }
+
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .Destructive, title: "Delete") { [unowned self] (_, indexPath) -> Void in
+            let row = indexPath.row
+            let user = self.allUsers[row]
+            CoreDataStackManager.sharedInstance().managedObjectContext.deleteObject(user)
+            CoreDataStackManager.sharedInstance().saveContext()
+
+            self.allUsers.removeAtIndex(row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Bottom)
+        }
+
+        let editAction = UITableViewRowAction(style: .Default, title: "Rename") { [unowned self] (_, indexPath) -> Void in
+            self.showNameAlertWithTitle("Rename User", message: "Enter the user's new name below", handler: { (name) -> Void in
+                self.allUsers[indexPath.row].name = name
+                CoreDataStackManager.sharedInstance().saveContext()
+                (tableView.cellForRowAtIndexPath(indexPath) as! UserPickerTableViewCell).name = name
+                tableView.setEditing(false, animated: true)
+            })
+        }
+        editAction.backgroundColor = UIColor.blueColor()
+
+        return [deleteAction, editAction]
     }
 
 }

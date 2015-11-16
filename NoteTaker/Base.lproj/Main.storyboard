@@ -26,7 +26,7 @@
         <!--Choose A Note-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Choose A Note" id="BYZ-38-t0r" customClass="ViewController" customModule="NoteTaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Choose A Note" id="BYZ-38-t0r" customClass="NotePickerViewController" customModule="NoteTaker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,8 +35,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in As:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCB-7y-2uC" userLabel="LoginMessage">
+                                <rect key="frame" x="30" y="74" width="105" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4p-WR-RYV" userLabel="ChangeUserButton">
+                                <rect key="frame" x="145" y="74" width="53" height="30"/>
+                                <state key="normal" title="Change"/>
+                                <connections>
+                                    <action selector="changeUserButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HmF-xK-aOl"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PhL-OO-5D1">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <rect key="frame" x="20" y="114" width="560" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Vaa-v4-VBH"/>
@@ -46,14 +59,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="f4p-WR-RYV" secondAttribute="trailing" constant="10" id="4Ow-fW-uhG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PhL-OO-5D1" secondAttribute="bottom" id="7Z4-hs-Mwa"/>
+                            <constraint firstItem="oCB-7y-2uC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="81d-Iw-JbT"/>
+                            <constraint firstItem="f4p-WR-RYV" firstAttribute="bottom" secondItem="oCB-7y-2uC" secondAttribute="bottom" id="8MX-mp-cFm"/>
+                            <constraint firstItem="f4p-WR-RYV" firstAttribute="top" secondItem="oCB-7y-2uC" secondAttribute="top" id="Kxy-Yg-8h0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PhL-OO-5D1" secondAttribute="trailing" id="PIk-gb-YGT"/>
                             <constraint firstItem="PhL-OO-5D1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Qa4-6J-CCn"/>
-                            <constraint firstItem="PhL-OO-5D1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jW3-5e-Djh"/>
+                            <constraint firstItem="oCB-7y-2uC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="nQ8-Fo-GKq"/>
+                            <constraint firstItem="f4p-WR-RYV" firstAttribute="leading" secondItem="oCB-7y-2uC" secondAttribute="trailing" constant="10" id="qcp-nj-rSg"/>
+                            <constraint firstItem="PhL-OO-5D1" firstAttribute="top" secondItem="oCB-7y-2uC" secondAttribute="bottom" constant="10" id="vfR-ys-fGL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose A Note" id="SNQ-jL-HUi"/>
                     <connections>
+                        <outlet property="changeUserButton" destination="f4p-WR-RYV" id="Js3-4a-vsr"/>
+                        <outlet property="loginMessageLabel" destination="oCB-7y-2uC" id="wf0-Om-oeg"/>
                         <outlet property="tableView" destination="PhL-OO-5D1" id="0gA-yF-0bx"/>
                     </connections>
                 </viewController>
@@ -73,13 +94,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose A User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5z-jE-vZw">
-                                <rect key="frame" x="40" y="40" width="520" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z0b-eK-ztn" userLabel="Users Table">
-                                <rect key="frame" x="40" y="84" width="520" height="496"/>
+                                <rect key="frame" x="40" y="87" width="520" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="user_cell" id="Xzb-G1-QHl" userLabel="UserCell" customClass="UserPickerTableViewCell" customModule="NoteTaker" customModuleProvider="target">
@@ -90,15 +106,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UX3-f2-olM" userLabel="name">
-                                                    <rect key="frame" x="28" y="11" width="383" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <rect key="frame" x="28" y="11" width="381" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.067029085199884181" green="0.40964330808080807" blue="0.086422864388121176" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="3 Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAx-q6-gTF" userLabel="note count">
-                                                    <rect key="frame" x="431" y="11" width="61" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <rect key="frame" x="429" y="11" width="63" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.067029085200000005" green="0.40964330809999999" blue="0.086422864390000007" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -130,8 +146,8 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g3-eS-YhE" userLabel="Add New User">
                                                     <rect key="frame" x="59" y="11" width="433" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.067029085200000005" green="0.40964330809999999" blue="0.086422864390000007" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -151,6 +167,11 @@
                                     <outlet property="delegate" destination="cM9-YC-8fe" id="AVi-Uh-GyV"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose A User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5z-jE-vZw">
+                                <rect key="frame" x="40" y="40" width="520" height="27"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -241,6 +262,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rav-5h-v6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="711" y="162"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GvS-jl-bSe">
+            <objects>
+                <viewController id="fpf-f4-TWn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MTB-Ke-KpX"/>
+                        <viewControllerLayoutGuide type="bottom" id="qa2-gd-Rno"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PyZ-Hx-yWI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OEe-U3-Z6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

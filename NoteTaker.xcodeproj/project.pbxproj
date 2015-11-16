@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		891665B91BF1C75100C8F939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665B81BF1C75100C8F939 /* AppDelegate.swift */; };
-		891665BB1BF1C75100C8F939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665BA1BF1C75100C8F939 /* ViewController.swift */; };
+		891665BB1BF1C75100C8F939 /* NotePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665BA1BF1C75100C8F939 /* NotePickerViewController.swift */; };
 		891665BE1BF1C75100C8F939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891665BC1BF1C75100C8F939 /* Main.storyboard */; };
 		891665C11BF1C75100C8F939 /* NoteTaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 891665BF1BF1C75100C8F939 /* NoteTaker.xcdatamodeld */; };
 		891665C31BF1C75100C8F939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891665C21BF1C75100C8F939 /* Assets.xcassets */; };
@@ -43,7 +43,7 @@
 /* Begin PBXFileReference section */
 		891665B51BF1C75100C8F939 /* NoteTaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		891665B81BF1C75100C8F939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		891665BA1BF1C75100C8F939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		891665BA1BF1C75100C8F939 /* NotePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePickerViewController.swift; sourceTree = "<group>"; };
 		891665BD1BF1C75100C8F939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		891665C01BF1C75100C8F939 /* NoteTaker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteTaker.xcdatamodel; sourceTree = "<group>"; };
 		891665C21BF1C75100C8F939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				891665EB1BF1CD5500C8F939 /* NoteEditorController.swift */,
-				891665BA1BF1C75100C8F939 /* ViewController.swift */,
+				891665BA1BF1C75100C8F939 /* NotePickerViewController.swift */,
 				89D0BB2A1BF96B7B0011FE0D /* UserPickerViewController.swift */,
 			);
 			name = ViewControllers;
@@ -304,7 +304,7 @@
 				89D0BB291BF96A8E0011FE0D /* UserPickerTableViewCell.swift in Sources */,
 				891665EC1BF1CD5500C8F939 /* NoteEditorController.swift in Sources */,
 				891665C11BF1C75100C8F939 /* NoteTaker.xcdatamodeld in Sources */,
-				891665BB1BF1C75100C8F939 /* ViewController.swift in Sources */,
+				891665BB1BF1C75100C8F939 /* NotePickerViewController.swift in Sources */,
 				891665B91BF1C75100C8F939 /* AppDelegate.swift in Sources */,
 				891665EA1BF1CA2300C8F939 /* Note.swift in Sources */,
 				89D0BB2B1BF96B7B0011FE0D /* UserPickerViewController.swift in Sources */,

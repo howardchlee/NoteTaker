@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NotePickerViewController.swift
 //  NoteTaker
 //
 //  Created by howard.lee on 11/9/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NotePickerViewController: UIViewController {
 
     var allNotes: [Note] {
         get {
@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loginMessageLabel: UILabel!
+    @IBOutlet weak var changeUserButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,16 +37,22 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if appDelegate.currentUser == nil {
-            guard let userPicker = self.storyboard?.instantiateViewControllerWithIdentifier("user_picker") as? UserPickerViewController else {
-                return
-            }
-            presentViewController(userPicker, animated: true, completion: nil)
+            loginMessageLabel.text = ""
+            changeUserButton.hidden = true
+            openUserPicker()
+        } else {
+            loginMessageLabel.text = "User: \(appDelegate.currentUser!.name)"
+            changeUserButton.hidden = false
         }
         tableView.reloadData()
     }
 
     func addButtonTapped() {
         openNoteEditor(nil)
+    }
+
+    @IBAction func changeUserButtonTapped(sender: UIButton) {
+        openUserPicker()
     }
 
     func openNoteEditor(noteId: Int?) {
@@ -55,9 +63,16 @@ class ViewController: UIViewController {
         noteEditorController.noteId = noteId
         presentViewController(noteEditorController, animated: true, completion: nil)
     }
+
+    func openUserPicker() {
+        guard let userPicker = self.storyboard?.instantiateViewControllerWithIdentifier("user_picker") as? UserPickerViewController else {
+            return
+        }
+        presentViewController(userPicker, animated: true, completion: nil)
+    }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension NotePickerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell()
         cell.textLabel?.text = allNotes[indexPath.row].noteTitle
@@ -75,6 +90,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
