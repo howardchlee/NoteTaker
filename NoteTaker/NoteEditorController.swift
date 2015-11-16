@@ -56,7 +56,7 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
         
         if noteId == nil {
             noteId = allNotes.count
-            let newNote = Note(title: "", body: "", dateCreated: NSDate(timeIntervalSinceNow: 0), dateUpdated: NSDate(timeIntervalSinceNow: 0), user: currentUser, context: managedObjectContext)
+            let _ = Note(title: "", body: "", dateCreated: NSDate(timeIntervalSinceNow: 0), dateUpdated: NSDate(timeIntervalSinceNow: 0), user: currentUser, context: managedObjectContext)
         }
         
         let note = allNotes[noteId!]

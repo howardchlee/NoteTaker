@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -121,17 +122,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="520" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ Add New User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g3-eS-YhE">
-                                                    <rect key="frame" x="28" y="11" width="464" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="OxE-bk-Ibs">
+                                                    <rect key="frame" x="28" y="8" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="OxE-bk-Ibs" secondAttribute="height" id="v2X-Lv-yZ7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g3-eS-YhE" userLabel="Add New User">
+                                                    <rect key="frame" x="59" y="11" width="433" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="OxE-bk-Ibs" firstAttribute="leading" secondItem="q7U-xc-n3O" secondAttribute="leadingMargin" constant="20" id="EyA-vG-SN3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OxE-bk-Ibs" secondAttribute="bottom" constant="2" id="Hjw-j0-txy"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="3g3-eS-YhE" secondAttribute="trailing" constant="20" id="V0P-i3-o1Q"/>
+                                                <constraint firstItem="3g3-eS-YhE" firstAttribute="leading" secondItem="OxE-bk-Ibs" secondAttribute="trailing" constant="6" id="bQA-4u-GnL"/>
                                                 <constraint firstItem="3g3-eS-YhE" firstAttribute="centerY" secondItem="q7U-xc-n3O" secondAttribute="centerY" id="ehc-5V-rhZ"/>
-                                                <constraint firstItem="3g3-eS-YhE" firstAttribute="leading" secondItem="q7U-xc-n3O" secondAttribute="leadingMargin" constant="20" id="mn0-Ub-ma0"/>
+                                                <constraint firstItem="OxE-bk-Ibs" firstAttribute="top" secondItem="q7U-xc-n3O" secondAttribute="topMargin" id="sMo-Qc-J8X"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -233,4 +243,7 @@
             <point key="canvasLocation" x="711" y="162"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="42" height="42"/>
+    </resources>
 </document>

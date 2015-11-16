@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:
-            UIBarButtonSystemItem.Add, target: self, action: "addButtonTapped")
+            UIBarButtonSystemItem.Compose, target: self, action: "addButtonTapped")
     }
 
     override func viewWillAppear(animated: Bool) {
