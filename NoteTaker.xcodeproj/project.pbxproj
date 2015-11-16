@@ -18,6 +18,9 @@
 		891665EA1BF1CA2300C8F939 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665E91BF1CA2300C8F939 /* Note.swift */; };
 		891665EC1BF1CD5500C8F939 /* NoteEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665EB1BF1CD5500C8F939 /* NoteEditorController.swift */; };
 		891665EF1BF32B4B00C8F939 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891665EE1BF32B4B00C8F939 /* CoreDataStackManager.swift */; };
+		89D0BB241BF9650A0011FE0D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0BB231BF9650A0011FE0D /* User.swift */; };
+		89D0BB291BF96A8E0011FE0D /* UserPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0BB281BF96A8E0011FE0D /* UserPickerTableViewCell.swift */; };
+		89D0BB2B1BF96B7B0011FE0D /* UserPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0BB2A1BF96B7B0011FE0D /* UserPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		891665E91BF1CA2300C8F939 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		891665EB1BF1CD5500C8F939 /* NoteEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditorController.swift; sourceTree = "<group>"; };
 		891665EE1BF32B4B00C8F939 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		89D0BB231BF9650A0011FE0D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		89D0BB281BF96A8E0011FE0D /* UserPickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPickerTableViewCell.swift; sourceTree = "<group>"; };
+		89D0BB2A1BF96B7B0011FE0D /* UserPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,13 +112,14 @@
 			isa = PBXGroup;
 			children = (
 				891665C21BF1C75100C8F939 /* Assets.xcassets */,
+				89D0BB221BF964FA0011FE0D /* Models */,
+				89D0BB251BF968610011FE0D /* Views */,
 				891665ED1BF3233400C8F939 /* ViewControllers */,
 				891665B81BF1C75100C8F939 /* AppDelegate.swift */,
 				891665BC1BF1C75100C8F939 /* Main.storyboard */,
 				891665C41BF1C75100C8F939 /* LaunchScreen.storyboard */,
 				891665C71BF1C75100C8F939 /* Info.plist */,
 				891665BF1BF1C75100C8F939 /* NoteTaker.xcdatamodeld */,
-				891665E91BF1CA2300C8F939 /* Note.swift */,
 				891665EE1BF32B4B00C8F939 /* CoreDataStackManager.swift */,
 			);
 			path = NoteTaker;
@@ -141,8 +148,26 @@
 			children = (
 				891665EB1BF1CD5500C8F939 /* NoteEditorController.swift */,
 				891665BA1BF1C75100C8F939 /* ViewController.swift */,
+				89D0BB2A1BF96B7B0011FE0D /* UserPickerViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		89D0BB221BF964FA0011FE0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				891665E91BF1CA2300C8F939 /* Note.swift */,
+				89D0BB231BF9650A0011FE0D /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		89D0BB251BF968610011FE0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89D0BB281BF96A8E0011FE0D /* UserPickerTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,12 +301,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D0BB291BF96A8E0011FE0D /* UserPickerTableViewCell.swift in Sources */,
 				891665EC1BF1CD5500C8F939 /* NoteEditorController.swift in Sources */,
 				891665C11BF1C75100C8F939 /* NoteTaker.xcdatamodeld in Sources */,
 				891665BB1BF1C75100C8F939 /* ViewController.swift in Sources */,
 				891665B91BF1C75100C8F939 /* AppDelegate.swift in Sources */,
 				891665EA1BF1CA2300C8F939 /* Note.swift in Sources */,
+				89D0BB2B1BF96B7B0011FE0D /* UserPickerViewController.swift in Sources */,
 				891665EF1BF32B4B00C8F939 /* CoreDataStackManager.swift in Sources */,
+				89D0BB241BF9650A0011FE0D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

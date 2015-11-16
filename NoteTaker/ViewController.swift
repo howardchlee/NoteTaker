@@ -12,12 +12,17 @@ class ViewController: UIViewController {
 
     var allNotes: [Note] {
         get {
-            return (UIApplication.sharedApplication().delegate as! AppDelegate).allNotes
+            if let notes = appDelegate.currentUser?.notes {
+                return notes
+            } else {
+                return [Note]()
+            }
         }
         set {
-            (UIApplication.sharedApplication().delegate as! AppDelegate).allNotes = newValue
+            appDelegate.currentUser?.notes = allNotes
         }
     }
+
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -29,6 +34,12 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if appDelegate.currentUser == nil {
+            guard let userPicker = self.storyboard?.instantiateViewControllerWithIdentifier("user_picker") as? UserPickerViewController else {
+                return
+            }
+            presentViewController(userPicker, animated: true, completion: nil)
+        }
         tableView.reloadData()
     }
 
@@ -70,10 +81,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .Delete {
             let noteId = indexPath.row
             let note = allNotes[noteId]
-            allNotes.removeAtIndex(noteId)
+            note.user = nil
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
 
-            CoreDataStackManager.sharedInstance().managedObjectContext.deleteObject(note)
             CoreDataStackManager.sharedInstance().saveContext()
         }
     }

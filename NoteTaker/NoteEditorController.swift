@@ -16,11 +16,19 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     var allNotes: [Note] {
         get {
-            return (UIApplication.sharedApplication().delegate as! AppDelegate).allNotes
+            if let notes = appDelegate.currentUser?.notes {
+                return notes
+            } else {
+                return [Note]()
+            }
         }
         set {
-            (UIApplication.sharedApplication().delegate as! AppDelegate).allNotes = newValue
+            appDelegate.currentUser?.notes = allNotes
         }
+    }
+
+    var currentUser: User {
+        return appDelegate.currentUser!
     }
 
     var managedObjectContext: NSManagedObjectContext {
@@ -47,9 +55,8 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
         let dateNow = NSDate(timeIntervalSinceNow: 0)
         
         if noteId == nil {
-            let newNote = Note(title: "", body: "", dateCreated: NSDate(timeIntervalSinceNow: 0), dateUpdated: NSDate(timeIntervalSinceNow: 0), context: managedObjectContext)
             noteId = allNotes.count
-            allNotes.append(newNote)
+            let newNote = Note(title: "", body: "", dateCreated: NSDate(timeIntervalSinceNow: 0), dateUpdated: NSDate(timeIntervalSinceNow: 0), user: currentUser, context: managedObjectContext)
         }
         
         let note = allNotes[noteId!]

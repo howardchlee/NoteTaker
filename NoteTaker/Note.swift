@@ -14,12 +14,13 @@ class Note :NSManagedObject {
     @NSManaged var noteBody: String
     @NSManaged var dateCreated: NSDate
     @NSManaged var dateUpdated: NSDate
+    @NSManaged var user: User?
     
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
     
-    init(title: String, body: String, dateCreated: NSDate, dateUpdated:NSDate, context: NSManagedObjectContext) {
+    init(title: String, body: String, dateCreated: NSDate, dateUpdated:NSDate, user: User, context: NSManagedObjectContext) {
         let entity = NSEntityDescription.entityForName("Note", inManagedObjectContext: context)!
         super.init(entity: entity, insertIntoManagedObjectContext: context)
 
@@ -27,5 +28,6 @@ class Note :NSManagedObject {
         self.noteBody = body
         self.dateCreated = dateCreated
         self.dateUpdated = dateUpdated
+        self.user = user
     }
 }

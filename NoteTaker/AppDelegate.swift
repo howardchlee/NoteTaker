@@ -13,22 +13,27 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var allNotes: [Note]!
-
-    func fetchAllNotes() -> [Note] {
-        let fetchRequest = NSFetchRequest(entityName: "Note")
+    var allUsers: [User]!
+    var currentUser: User?
+    
+    func fetchAllUsers() -> [User] {
+        let fetchRequest = NSFetchRequest(entityName: "User")
         do {
-            return try CoreDataStackManager.sharedInstance().managedObjectContext.executeFetchRequest(fetchRequest) as! [Note]
+            return try CoreDataStackManager.sharedInstance().managedObjectContext.executeFetchRequest(fetchRequest) as! [User]
         } catch let error as NSError {
-            print("Error in fetchAllNotes(): \(error)")
-            return [Note]()
+            print("Error in fetchAllUsers(): \(error)")
+            return [User]()
         }
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        allNotes = fetchAllNotes()
+        allUsers = fetchAllUsers()
         return true
     }
 }
 
+extension UIViewController {
+    var appDelegate :AppDelegate {
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
+}
