@@ -131,7 +131,7 @@
                                             <outlet property="nameLabel" destination="UX3-f2-olM" id="sTB-DI-gCb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="add_user_cell" id="k2b-ay-DTp" userLabel="AddCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="add_user_cell" id="k2b-ay-DTp" userLabel="AddCell">
                                         <rect key="frame" x="0.0" y="72" width="520" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k2b-ay-DTp" id="q7U-xc-n3O">
@@ -139,7 +139,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="OxE-bk-Ibs">
-                                                    <rect key="frame" x="28" y="8" width="25" height="25"/>
+                                                    <rect key="frame" x="28" y="9" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="OxE-bk-Ibs" secondAttribute="height" id="v2X-Lv-yZ7"/>
                                                     </constraints>
@@ -153,11 +153,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="OxE-bk-Ibs" firstAttribute="leading" secondItem="q7U-xc-n3O" secondAttribute="leadingMargin" constant="20" id="EyA-vG-SN3"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="OxE-bk-Ibs" secondAttribute="bottom" constant="2" id="Hjw-j0-txy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OxE-bk-Ibs" secondAttribute="bottom" constant="1" id="Hjw-j0-txy"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="3g3-eS-YhE" secondAttribute="trailing" constant="20" id="V0P-i3-o1Q"/>
                                                 <constraint firstItem="3g3-eS-YhE" firstAttribute="leading" secondItem="OxE-bk-Ibs" secondAttribute="trailing" constant="6" id="bQA-4u-GnL"/>
                                                 <constraint firstItem="3g3-eS-YhE" firstAttribute="centerY" secondItem="q7U-xc-n3O" secondAttribute="centerY" id="ehc-5V-rhZ"/>
-                                                <constraint firstItem="OxE-bk-Ibs" firstAttribute="top" secondItem="q7U-xc-n3O" secondAttribute="topMargin" id="sMo-Qc-J8X"/>
+                                                <constraint firstItem="OxE-bk-Ibs" firstAttribute="top" secondItem="q7U-xc-n3O" secondAttribute="topMargin" constant="1" id="sMo-Qc-J8X"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
