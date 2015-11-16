@@ -12,7 +12,7 @@ import CoreData
 
 class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var noteId: Int?
-    var saveBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var saveBarButtonItem: UIBarButtonItem!
     
     var allNotes: [Note] {
         get {
@@ -32,8 +32,6 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "saveTapped")
-        navigationItem.rightBarButtonItem = saveBarButtonItem
         saveBarButtonItem.enabled = false
 
         if let noteId = noteId {
@@ -42,8 +40,8 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
             bodyTextView.text = note.noteBody
         }
     }
-    
-    func saveTapped() {
+
+    @IBAction func saveTapped(sender: UIBarButtonItem) {
         let noteTitle = titleTextField.text ?? ""
         let noteBody = bodyTextView.text ?? ""
         let dateNow = NSDate(timeIntervalSinceNow: 0)
@@ -62,7 +60,11 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
         CoreDataStackManager.sharedInstance().saveContext()
         saveBarButtonItem.enabled = false
     }
-    
+
+    @IBAction func cancelTapped(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
     // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -79,6 +81,7 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
     }
     
     // MARK: UITextViewDelegate
+
     func textViewDidChange(textView: UITextView) {
         saveBarButtonItem.enabled = true
     }

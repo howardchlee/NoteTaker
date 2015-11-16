@@ -72,8 +72,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVm-8d-JbE">
+                                <rect key="frame" x="20" y="20" width="560" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="WbF-G7-OZo" userLabel="CancelItem">
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="jpz-wl-ofL" id="Nfo-P0-quh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="S7S-Hg-7ng"/>
+                                    <barButtonItem systemItem="save" id="tqI-eY-hY6" userLabel="SaveItem">
+                                        <connections>
+                                            <action selector="saveTapped:" destination="jpz-wl-ofL" id="pxg-0f-fy5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Cx-Rf-RDC" userLabel="titleTextField">
-                                <rect key="frame" x="40" y="40" width="520" height="30"/>
+                                <rect key="frame" x="40" y="84" width="520" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.97353000869999995" blue="0.90756139059999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -82,7 +98,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sMe-aU-TVn" userLabel="bodyTextView">
-                                <rect key="frame" x="40" y="90" width="520" height="490"/>
+                                <rect key="frame" x="40" y="134" width="520" height="446"/>
                                 <color key="backgroundColor" red="1" green="0.97353000871614026" blue="0.90756139056578278" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -95,21 +111,25 @@
                         <constraints>
                             <constraint firstItem="sMe-aU-TVn" firstAttribute="top" secondItem="6Cx-Rf-RDC" secondAttribute="bottom" constant="20" id="1oN-yd-Pgy"/>
                             <constraint firstItem="sMe-aU-TVn" firstAttribute="leading" secondItem="6Cx-Rf-RDC" secondAttribute="leading" id="4CJ-0e-c81"/>
-                            <constraint firstItem="6Cx-Rf-RDC" firstAttribute="top" secondItem="a2Z-Lz-Ltt" secondAttribute="bottom" constant="20" id="DDj-FX-iCh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZVm-8d-JbE" secondAttribute="trailing" id="EZ6-Mw-ZYh"/>
+                            <constraint firstItem="6Cx-Rf-RDC" firstAttribute="top" secondItem="ZVm-8d-JbE" secondAttribute="bottom" constant="20" id="IXk-DR-c8U"/>
                             <constraint firstItem="uwD-8q-gsn" firstAttribute="top" secondItem="sMe-aU-TVn" secondAttribute="bottom" constant="20" id="V0w-So-TJD"/>
+                            <constraint firstItem="ZVm-8d-JbE" firstAttribute="leading" secondItem="kxo-Xm-5wn" secondAttribute="leadingMargin" id="WfJ-DI-upH"/>
                             <constraint firstItem="sMe-aU-TVn" firstAttribute="trailing" secondItem="6Cx-Rf-RDC" secondAttribute="trailing" id="ZMw-nM-O7M"/>
                             <constraint firstItem="6Cx-Rf-RDC" firstAttribute="leading" secondItem="kxo-Xm-5wn" secondAttribute="leadingMargin" constant="20" id="q4m-aO-YIQ"/>
+                            <constraint firstItem="ZVm-8d-JbE" firstAttribute="top" secondItem="kxo-Xm-5wn" secondAttribute="topMargin" constant="20" id="qPX-po-hbD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6Cx-Rf-RDC" secondAttribute="trailing" constant="20" id="yYw-Cg-Ing"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bodyTextView" destination="sMe-aU-TVn" id="KCw-99-U94"/>
+                        <outlet property="saveBarButtonItem" destination="tqI-eY-hY6" id="BMs-NP-k2I"/>
                         <outlet property="titleTextField" destination="6Cx-Rf-RDC" id="o1d-51-XRw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rav-5h-v6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717" y="168"/>
+            <point key="canvasLocation" x="711" y="162"/>
         </scene>
     </scenes>
 </document>

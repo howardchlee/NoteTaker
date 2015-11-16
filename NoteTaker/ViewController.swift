@@ -42,8 +42,7 @@ class ViewController: UIViewController {
         }
 
         noteEditorController.noteId = noteId
-        navigationController?.pushViewController(noteEditorController, animated: true)
-        
+        presentViewController(noteEditorController, animated: true, completion: nil)
     }
 }
 
