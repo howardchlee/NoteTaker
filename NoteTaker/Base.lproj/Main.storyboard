@@ -204,24 +204,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVm-8d-JbE">
-                                <rect key="frame" x="20" y="20" width="560" height="44"/>
-                                <items>
-                                    <barButtonItem systemItem="cancel" id="WbF-G7-OZo" userLabel="CancelItem">
-                                        <connections>
-                                            <action selector="cancelTapped:" destination="jpz-wl-ofL" id="Nfo-P0-quh"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="S7S-Hg-7ng"/>
-                                    <barButtonItem systemItem="save" id="tqI-eY-hY6" userLabel="SaveItem">
-                                        <connections>
-                                            <action selector="saveTapped:" destination="jpz-wl-ofL" id="pxg-0f-fy5"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Cx-Rf-RDC" userLabel="titleTextField">
-                                <rect key="frame" x="40" y="84" width="520" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Cx-Rf-RDC" userLabel="titleTextField">
+                                <rect key="frame" x="40" y="50" width="440" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.97353000869999995" blue="0.90756139059999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -230,7 +214,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sMe-aU-TVn" userLabel="bodyTextView">
-                                <rect key="frame" x="40" y="134" width="520" height="446"/>
+                                <rect key="frame" x="40" y="100" width="520" height="480"/>
                                 <color key="backgroundColor" red="1" green="0.97353000871614026" blue="0.90756139056578278" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -238,24 +222,48 @@
                                     <outlet property="delegate" destination="jpz-wl-ofL" id="prm-S4-vhP"/>
                                 </connections>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wy-89-i5t" userLabel="saveButton">
+                                <rect key="frame" x="490" y="50" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7Wy-89-i5t" secondAttribute="height" multiplier="1:1" id="yCR-aI-pEO"/>
+                                </constraints>
+                                <state key="normal" image="save"/>
+                                <connections>
+                                    <action selector="saveTapped:" destination="jpz-wl-ofL" eventType="touchUpInside" id="TGz-rE-qLI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuM-wv-oJa" userLabel="closeButton">
+                                <rect key="frame" x="530" y="50" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XYR-09-zal"/>
+                                    <constraint firstAttribute="width" secondItem="IuM-wv-oJa" secondAttribute="height" multiplier="1:1" id="fWx-Ro-gT7"/>
+                                </constraints>
+                                <state key="normal" image="cross"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="jpz-wl-ofL" eventType="touchUpInside" id="BSH-yx-rY5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sMe-aU-TVn" firstAttribute="top" secondItem="6Cx-Rf-RDC" secondAttribute="bottom" constant="20" id="1oN-yd-Pgy"/>
+                            <constraint firstItem="7Wy-89-i5t" firstAttribute="bottom" secondItem="IuM-wv-oJa" secondAttribute="bottom" id="2BP-6e-WfE"/>
                             <constraint firstItem="sMe-aU-TVn" firstAttribute="leading" secondItem="6Cx-Rf-RDC" secondAttribute="leading" id="4CJ-0e-c81"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZVm-8d-JbE" secondAttribute="trailing" id="EZ6-Mw-ZYh"/>
-                            <constraint firstItem="6Cx-Rf-RDC" firstAttribute="top" secondItem="ZVm-8d-JbE" secondAttribute="bottom" constant="20" id="IXk-DR-c8U"/>
+                            <constraint firstItem="6Cx-Rf-RDC" firstAttribute="top" secondItem="a2Z-Lz-Ltt" secondAttribute="bottom" constant="30" id="HbY-1o-E0W"/>
+                            <constraint firstItem="7Wy-89-i5t" firstAttribute="bottom" secondItem="6Cx-Rf-RDC" secondAttribute="bottom" id="JML-Lp-SMA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IuM-wv-oJa" secondAttribute="trailing" constant="20" id="Kp4-dG-imo"/>
+                            <constraint firstItem="IuM-wv-oJa" firstAttribute="leading" secondItem="7Wy-89-i5t" secondAttribute="trailing" constant="10" id="Lf1-TA-ryC"/>
                             <constraint firstItem="uwD-8q-gsn" firstAttribute="top" secondItem="sMe-aU-TVn" secondAttribute="bottom" constant="20" id="V0w-So-TJD"/>
-                            <constraint firstItem="ZVm-8d-JbE" firstAttribute="leading" secondItem="kxo-Xm-5wn" secondAttribute="leadingMargin" id="WfJ-DI-upH"/>
-                            <constraint firstItem="sMe-aU-TVn" firstAttribute="trailing" secondItem="6Cx-Rf-RDC" secondAttribute="trailing" id="ZMw-nM-O7M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sMe-aU-TVn" secondAttribute="trailing" constant="20" id="Vtd-gc-sGW"/>
+                            <constraint firstItem="7Wy-89-i5t" firstAttribute="top" secondItem="IuM-wv-oJa" secondAttribute="top" id="WvF-p3-apM"/>
+                            <constraint firstItem="7Wy-89-i5t" firstAttribute="leading" secondItem="6Cx-Rf-RDC" secondAttribute="trailing" constant="10" id="gdm-68-0J4"/>
+                            <constraint firstItem="7Wy-89-i5t" firstAttribute="top" secondItem="6Cx-Rf-RDC" secondAttribute="top" id="kbs-X4-S2h"/>
                             <constraint firstItem="6Cx-Rf-RDC" firstAttribute="leading" secondItem="kxo-Xm-5wn" secondAttribute="leadingMargin" constant="20" id="q4m-aO-YIQ"/>
-                            <constraint firstItem="ZVm-8d-JbE" firstAttribute="top" secondItem="kxo-Xm-5wn" secondAttribute="topMargin" constant="20" id="qPX-po-hbD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6Cx-Rf-RDC" secondAttribute="trailing" constant="20" id="yYw-Cg-Ing"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bodyTextView" destination="sMe-aU-TVn" id="KCw-99-U94"/>
-                        <outlet property="saveBarButtonItem" destination="tqI-eY-hY6" id="BMs-NP-k2I"/>
+                        <outlet property="saveButton" destination="7Wy-89-i5t" id="ksk-uN-QpU"/>
                         <outlet property="titleTextField" destination="6Cx-Rf-RDC" id="o1d-51-XRw"/>
                     </connections>
                 </viewController>
@@ -283,5 +291,7 @@
     </scenes>
     <resources>
         <image name="add" width="42" height="42"/>
+        <image name="cross" width="42" height="42"/>
+        <image name="save" width="42" height="42"/>
     </resources>
 </document>

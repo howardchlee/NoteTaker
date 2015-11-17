@@ -12,7 +12,7 @@ import CoreData
 
 class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var noteId: Int?
-    @IBOutlet weak var saveBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIButton!
     
     var allNotes: [Note] {
         get {
@@ -26,7 +26,7 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
             appDelegate.currentUser?.notes = allNotes
         }
     }
-
+    
     var currentUser: User {
         return appDelegate.currentUser!
     }
@@ -40,8 +40,12 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveBarButtonItem.enabled = false
+        saveButton.enabled = false
 
+        titleTextField.layer.borderWidth = 2.0
+        titleTextField.layer.borderColor = UIColor(colorLiteralRed: 26, green: 61, blue: 76, alpha: 1).CGColor
+        bodyTextView.layer.borderWidth = 2.0
+        bodyTextView.layer.borderColor = UIColor(colorLiteralRed: 26, green: 61, blue: 76, alpha: 1).CGColor
         if let noteId = noteId {
             let note = allNotes[noteId]
             titleTextField.text = note.noteTitle
@@ -49,7 +53,7 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
         }
     }
 
-    @IBAction func saveTapped(sender: UIBarButtonItem) {
+    @IBAction func saveTapped(sender: UIButton) {
         let noteTitle = titleTextField.text ?? ""
         let noteBody = bodyTextView.text ?? ""
         let dateNow = NSDate(timeIntervalSinceNow: 0)
@@ -65,11 +69,11 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
         note.dateUpdated = dateNow
         
         CoreDataStackManager.sharedInstance().saveContext()
-        saveBarButtonItem.enabled = false
+        saveButton.enabled = false
     }
 
-    @IBAction func cancelTapped(sender: UIBarButtonItem) {
-        if saveBarButtonItem.enabled {
+    @IBAction func cancelTapped(sender: UIButton) {
+        if saveButton.enabled {
             // there is save to be commited
             let alert = UIAlertController(title: "Exiting Editor", message: "You have unsaved changes to this note.  Are you sure you want to discard the unsaved changes and exit?", preferredStyle: .Alert)
 
@@ -98,13 +102,13 @@ class NoteEditorController: UIViewController, UITextFieldDelegate, UITextViewDel
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        saveBarButtonItem.enabled = true
+        saveButton.enabled = true
         return true
     }
     
     // MARK: UITextViewDelegate
 
     func textViewDidChange(textView: UITextView) {
-        saveBarButtonItem.enabled = true
+        saveButton.enabled = true
     }
 }
