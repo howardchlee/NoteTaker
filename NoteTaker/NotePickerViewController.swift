@@ -100,10 +100,10 @@ extension NotePickerViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .Delete {
             let noteId = indexPath.row
             let note = allNotes[noteId]
-            note.user = nil
+            CoreDataStackManager.sharedInstance().managedObjectContext.deleteObject(note)
+            CoreDataStackManager.sharedInstance().saveContext()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
 
-            CoreDataStackManager.sharedInstance().saveContext()
         }
     }
 }
